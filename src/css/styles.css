@@ -1,0 +1,29 @@
+#calendar {
+    width: auto;
+    /*border: solid red 1px;*/  
+    border-collapse: collapse;
+}  
+td, th {
+    width: 5rem;
+    border: 1px solid gray;
+  }
+th {
+    padding: 1rem;
+}
+td {
+    text-align: center;
+    font-size: 2rem;
+} 
+td:hover {
+    cursor: pointer;
+    background-color: #8900f2;
+    color: white;
+}   
+a {
+    text-decoration: none;
+    color: black;
+    border: solid black 1px;
+}
+.choosebtn {
+    padding: 1rem;
+}  
