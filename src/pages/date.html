@@ -11,25 +11,25 @@
         <div class="data-container">
             <div id="spec-date" class="date-container">
             </div>
-            <form name="appointment-form">
+            <form name="appointment-form" id="appointment-form">
                 <div class="form-body">
                     <div class="label">
                         <label>Nombre</label><br>
                     </div>
                     <div class="input-text">
-                        <input type="text" name="fname"/><br>
+                        <input type="text" name="fname" required/><br>
                     </div>
                     <div class="label">
                         <label>Apellido</label><br>
                     </div>
                     <div class="input-text">
-                        <input type="text" name="lname"/><br>
+                        <input type="text" name="lname" required/><br>
                     </div>
                     <div class="label">
                         <label>Correo electronico</label><br>
                     </div>
                     <div class="input-text">
-                        <input type="email" name="email"/><br>
+                        <input type="email" name="email" required/><br>
                     </div>
                 </div>
             </form>
@@ -48,7 +48,7 @@
           </div>
         </div>
     <div class="agenda-btn">
-        <button onclick="submitForm()">Agendar</button>
+        <button type="submit" form="appointment-form" onclick="submitForm()">Agendar</button>
     </div>
     <script src="../js/date.js"></script>
 </body>
