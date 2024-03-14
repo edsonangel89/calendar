@@ -1,7 +1,6 @@
 .spec-date {
     width: 60%;
     color: black;
-    border: solid gray 1px;
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -22,17 +21,15 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
-td div {
-    width: 5rem;
-    border: 1px solid gray;
-    border-collapse: collapse;
-    padding: 0.8rem;
-  }
 td div{
     width: auto;
+    padding: 0.8rem;
     text-align: center;
+    border-collapse: collapse;
     border-radius: 8px;
     border: 1px solid lightgray;
+    background-color: white;
+    color: black;
 }
 td div:focus {
     background-color: #8900f2;
@@ -53,12 +50,10 @@ tbody {
         width: 95%;
         display: flex;
         flex-direction: column;
-        border: solid gray 1px;
         margin: 2rem auto;
     }
     .data-container {
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -69,11 +64,20 @@ tbody {
         display: flex;
         flex-direction: column;
     }
+    #schedule-table-title {
+        padding: 2rem auto !important;
+        color: white;
+    }
     form {
         width: 100%;
-        border: solid gray 1px;
+        background-color: #8900f2;
+        color: white;
+        border-radius: 1rem;
     }
     .form-body {
+        padding: 2rem;
+    }
+    th {
         padding: 1rem;
     }
     button {
@@ -87,10 +91,18 @@ tbody {
     }
     .label, .input-submit {
         margin-top: 1rem;
+        margin-left: 0.8rem;
+        margin-bottom: 0.3rem;
     }
-    input[type="text"], input[type="email"] {
+    input[type="text"], input[type="email"], input[type="phone"] {
         width: 98%;
         height: 2rem;
+        padding-left: 0.7rem;
         font-size: 1rem;
+        border-radius: 2rem;
+        border: solid lightgray 1px;
+    }
+    input[type="text"]:focus, input[type="email"]:focus, input[type="phone"]:focus {
+        outline: solid 1px #8900f2;
     }
 }

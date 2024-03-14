@@ -9,27 +9,32 @@
 <body>
     <div class="spec-date">
         <div class="data-container">
-            <div id="spec-date" class="date-container">
-            </div>
+            <div id="spec-date" class="date-container"></div>
             <form name="appointment-form" id="appointment-form">
                 <div class="form-body">
                     <div class="label">
-                        <label>Nombre</label><br>
+                        <label>Nombre(s)</label><br>
                     </div>
                     <div class="input-text">
                         <input type="text" name="fname" required/><br>
                     </div>
                     <div class="label">
-                        <label>Apellido</label><br>
+                        <label>Apellido(s)</label><br>
                     </div>
                     <div class="input-text">
                         <input type="text" name="lname" required/><br>
                     </div>
                     <div class="label">
-                        <label>Correo electronico</label><br>
+                        <label>Correo electrónico</label><br>
                     </div>
                     <div class="input-text">
                         <input type="email" name="email" required/><br>
+                    </div>
+                    <div class="label">
+                        <label>Teléfono</label><br>
+                    </div>
+                    <div class="input-text">
+                        <input type="phone" name="phone" required/><br>
                     </div>
                 </div>
             </form>
@@ -37,18 +42,14 @@
             <div class='time-container'>
                 <table>
                     <thead>
-                        <tr>
-                            <th>HORARIOS</th>
-                        </tr>
+                        <th>HORARIOS</th>
                     </thead>
-                    <tbody id="schedule-table">
-                
-                    </tbody>
+                    <tbody id="schedule-table"></tbody>
                 </table>
-          </div>
+            </div>
         </div>
     <div class="agenda-btn">
-        <button type="submit" form="appointment-form" onclick="submitForm()">Agendar</button>
+        <button type="submit" form="appointment-form" onclick="submitForm()">Solicitar</button>
     </div>
     <script src="../js/date.js"></script>
 </body>

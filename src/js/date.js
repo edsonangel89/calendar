@@ -63,7 +63,6 @@ function submitForm() {
   const emailAddress = appForm['email'].value;
   const selSchedule = selTime;
   const msg = 'Nombres: ' + fName + ' Apellidos: ' + lName + ' Email: ' + emailAddress + ' Horario: ' + selSchedule;
-  //alert(msg); 
 } 
 
 schedule.addEventListener('click', function (event) {
