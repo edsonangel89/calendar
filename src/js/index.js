@@ -1,5 +1,6 @@
 const calendar = document.getElementById('calendar');
 const prevButton = document.getElementById('prev');
+const currentMonthYear = document.getElementById('currentMY-container');
 
 let today = new Date();
 let currentMonth;
@@ -31,9 +32,11 @@ function prev() {
     }
     
     if (today < new Date(currentYear, currentMonth)) {
+      prevButton.style.opacity = 1;
       prevButton.removeAttribute('disabled');
     }
     else {
+      prevButton.style.opacity = 0.5;
       prevButton.setAttribute('disabled', 'true');
     }
     createCalendar(currentYear, currentMonth); 
@@ -48,9 +51,11 @@ function next() {
         currentMonth = currentMonth + 1;
     }
     if (today < new Date(currentYear, currentMonth)) {
+      prevButton.style.opacity = 1;
       prevButton.removeAttribute('disabled');
     }
     else {
+      prevButton.style.opacity = 0.5;
       prevButton.setAttribute('disabled', 'true');
     }
     createCalendar(currentYear, currentMonth);
@@ -61,7 +66,8 @@ function createCalendar(year, month) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDayIndex = date.getDay();
   
-  const months = ['Enero', 
+  const months = [
+    'Enero', 
     'Febrero', 
     'Marzo', 
     'Abril', 
@@ -74,16 +80,18 @@ function createCalendar(year, month) {
     'Noviembre', 
     'Diciembre'];
 
-  calendar.innerHTML = `
+  currentMonthYear.innerHTML = `
     <h2>${months[month]} ${year}</h2>
+  `
+  calendar.innerHTML = `
       <tr>
-        <th>Domingo</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miércoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-        <th>Sábado</th>
+        <th>Dom</th>
+        <th>Lun</th>
+        <th>Mar</th>
+        <th>Mie</th>
+        <th>Jue</th>
+        <th>Vie</th>
+        <th>Sab</th>
       </tr>
   `;
 
@@ -116,4 +124,3 @@ function createCalendar(year, month) {
     calendar.appendChild(row);
   }
 }
-

@@ -7,10 +7,15 @@
   <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 <body>
-  <table id="calendar"></table>
-  <div style="display: flex; justify-content: space-between;">
-    <button id="prev" onclick="prev()" class="choosebtn" disabled>PREV</button>
-    <button id="next" onclick="next()" class="choosebtn">NEXT</button>
+  <div class="main-container">
+    <div id="currentMY-container"></div>
+    <div class="calendar-container">
+      <table id="calendar"></table>
+    </div>
+    <div class="btns-container">
+      <button id="prev" onclick="prev()" class="choosebtn" disabled>Anterior</button>
+      <button id="next" onclick="next()" class="choosebtn">Siguiente</button>
+    </div>
   </div>
   <script src="./src/js/index.js"></script>
 </body>
