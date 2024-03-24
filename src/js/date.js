@@ -27,29 +27,15 @@ appForm.addEventListener('submit', (event) => {
   const selSchedule = selTime;
   const msg = 'Nombre(s): ' + fName + '\nApellido(s): ' + lName + '\nEmail: ' + emailAddress + '\nHorario: ' + selSchedule;
 
-  //alert('Before request');
-  /*const req = new Request('https://api.whatsapp.com/send?phone=+523322786320', {
-    method: 'GET',
-    body: `{ "lname": ${fName} }`
-  });*/
-
-  //alert('Before for loop');
   for(let x = 0; x < nodes.length; x++) {
     if (nodes[x].firstChild.dataset.focus == 'true') {
-      //console.log(nodes[x].firstChild.innerHTML);
-      //alert('test');
       const confirmResponse = confirm(msg + '\nEs correcto?');
       console.log('Before if confirmresponse');
       if (confirmResponse) {
-        /*fetch(req).then((response) => {
-          alert(response);
-        })*/
-        //alert('True');
-        //event.preventDefault();
-        //window.location.href = 'file://c:/xampp/htdocs/calendar/index.html'
+        event.preventDefault();
+        window.location.href = '/calendar';
       }
       else {
-        //alert('False');
         event.preventDefault();
       }
       return;
@@ -111,7 +97,6 @@ schedule.addEventListener('click', function (event) {
     }
     event.target.style.backgroundColor = '#8900f2';
     event.target.style.color = 'white';
-    //isFocus = true;
     event.target.setAttribute('data-focus','true');
     selTime = event.target.id;
   }
