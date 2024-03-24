@@ -65,6 +65,7 @@ function createCalendar(year, month) {
   const date = new Date(year, month, 1);  //This function returns the day of the week which the month start
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDayIndex = date.getDay();
+  const today = new Date();
   
   const months = [
     'Enero', 
@@ -103,6 +104,7 @@ function createCalendar(year, month) {
     for (let j = 0; j < 7; j++) {
       if (i === 0 && j < firstDayIndex) {
         const cell = document.createElement('td');
+        cell.style.opacity = 0.5;
         row.appendChild(cell);
       } 
       else if (day > daysInMonth) {
@@ -110,14 +112,22 @@ function createCalendar(year, month) {
       } 
       else {
         const cell = document.createElement('td');
-        cell.addEventListener('click', function () {
-          const day = this.innerHTML;
-          const datos = { doweek: j, d: day, m: months[month], y: year };
-          const queryString = new URLSearchParams(datos).toString();
-          window.location.href = `./src/pages/date.html?${queryString}`;
-        })
         cell.textContent = day;
         row.appendChild(cell);
+        if (today.getDate() == day && today.getMonth() == month) {
+          cell.style.color = 'blue';
+        }
+        else if (day < today.getDate() && today.getMonth() == month){
+          cell.style.opacity = 0.5;
+        }
+        else {
+          cell.addEventListener('click', function () {
+            const day = this.innerHTML;
+            const datos = { doweek: j, d: day, m: months[month], y: year };
+            const queryString = new URLSearchParams(datos).toString();
+            window.location.href = `./src/pages/date.html?${queryString}`;
+          })
+        }
         day++;
       }
     }

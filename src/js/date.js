@@ -30,7 +30,6 @@ appForm.addEventListener('submit', (event) => {
   for(let x = 0; x < nodes.length; x++) {
     if (nodes[x].firstChild.dataset.focus == 'true') {
       const confirmResponse = confirm(msg + '\nEs correcto?');
-      console.log('Before if confirmresponse');
       if (confirmResponse) {
         event.preventDefault();
         window.location.href = '/calendar';
