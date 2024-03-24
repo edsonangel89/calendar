@@ -115,7 +115,8 @@ function createCalendar(year, month) {
         cell.textContent = day;
         row.appendChild(cell);
         if (today.getDate() == day && today.getMonth() == month) {
-          cell.style.color = 'blue';
+          cell.style.color = 'white';
+          cell.style.backgroundColor = '#f20089';
         }
         else if (day < today.getDate() && today.getMonth() == month){
           cell.style.opacity = 0.5;
