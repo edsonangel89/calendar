@@ -10,31 +10,31 @@
     <div class="spec-date">
         <div class="data-container">
             <div id="spec-date" class="date-container"></div>
-            <form name="appointment-form" id="appointment-form">
+            <form method="post" name="appointment-form" id="appointment-form" action="../php/res.php"> <!--onsubmit="event.preventDefault()"-->
                 <div class="form-body">
                     <div class="label">
-                        <label>Nombre(s)</label><br>
+                        <label for="fname">Nombre(s)</label><br>
                     </div>
                     <div class="input-text">
-                        <input type="text" name="fname" required/><br>
+                        <input type="text" id="fname" name="fname" required/><br>
                     </div>
                     <div class="label">
-                        <label>Apellido(s)</label><br>
+                        <label for="lname">Apellido(s)</label><br>
                     </div>
                     <div class="input-text">
-                        <input type="text" name="lname" required/><br>
+                        <input type="text" id="lname" name="lname" required/><br>
                     </div>
                     <div class="label">
-                        <label>Correo electrónico</label><br>
+                        <label for="email">Correo electrónico</label><br>
                     </div>
                     <div class="input-text">
-                        <input type="email" name="email" required/><br>
+                        <input type="email" id="email" name="email" required/><br>
                     </div>
                     <div class="label">
-                        <label>Teléfono</label><br>
+                        <label for="phone">Teléfono</label><br>
                     </div>
                     <div class="input-text">
-                        <input type="phone" name="phone" required/><br>
+                        <input type="phone" id="phone" name="phone" required/><br>
                     </div>
                 </div>
             </form>
@@ -49,8 +49,10 @@
             </div>
         </div>
     <div class="agenda-btn">
-        <button type="submit" form="appointment-form" onclick="submitForm()">Solicitar</button>
+        <button type="submit" form="appointment-form" >Solicitar</button> <!--form="appointment-form"-->
     </div>
     <script src="../js/date.js"></script>
 </body>
 </html>
+
+<!--type="submit" form="appointment-form" onclick="submitForm()"-->
